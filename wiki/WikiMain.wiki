@@ -1,0 +1,13 @@
+#summary Main wiki page, serves as index
+
+= Introduction =
+
+This is the Galaxy Mage Redux wiki. Here you will find info about the diferent taskgroups, the roadmap and every bit of information regarding the project.
+
+
+= Main pages =
+
+  * RoadMap
+  * [Programming]
+  * [Art]
+  * [Audio]
