@@ -1,14 +1,20 @@
-#summary Main wiki page, serves as index
+#summary A road map to GalaxyMage Redux and its development.
 #labels Featured
 
 = Introduction =
 
-This is the Galaxy Mage Redux wiki. Here you will find info about the diferent taskgroups, the roadmap and every bit of information regarding the project.
+Welcome to the GalaxyMage Redux wiki.  Below you will find links to all the most important wiki pages.  If you find any errors or broken links, please send an email to one of the project owners.  Have fun and good luck!
 
 
-= Main pages =
+= Gameplay =
 
-  * RoadMap
+  * [Basics]
+  * [Controls]
+  * [Factions]
+
+= Development =
+
+  * [Roadmap]
   * [Programming]
   * [Art]
   * [Audio]
