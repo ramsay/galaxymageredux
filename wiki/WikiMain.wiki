@@ -6,13 +6,13 @@
 Welcome to the GalaxyMage Redux wiki.  Below you will find links to all the most important wiki pages.  If you find any errors or broken links, please send an email to one of the project owners.  Have fun and good luck!
 
 
-= Gameplay =
+== Gameplay ==
 
   * [Basics]
   * [Controls]
   * [Factions]
 
-= Development =
+== Development ==
 
   * [Roadmap]
   * [Programming]
