@@ -4,7 +4,7 @@
 
 ==Think Twice before committing==
 
-Committing something to SVN has serious consequences. All other developers will get your changes once they are in SVN, and if they break something, they will break it for everybody.
+Committing something to svn has serious consequences. All other developers will get your changes once they are in svn, and if they break something, they will break it for everybody.
 
 ==Double check what you commit==
 
