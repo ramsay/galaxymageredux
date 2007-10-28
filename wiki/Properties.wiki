@@ -27,7 +27,7 @@ The pythonic way of accessing and modifying the x variable would be:
 -  5
 }}}
 
-Now, if you wanted to check to make sure someone can not set x to a negative number you could change the definite of A:
+Now, if you wanted to check to make sure someone can not set x to a negative number you could change the definition of A:
 
 {{{
 class A(object):
