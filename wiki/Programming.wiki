@@ -1,0 +1,11 @@
+#summary An overview of information needed for people interested in programming for GMR.
+#labels Phase-Implementation
+
+= Introduction =
+
+Below is information regarding the programming side of GMR. If you interested in helping out, please read through everything.
+
+
+= Links =
+
+  * Getters and Setters in Python = [Properties]
