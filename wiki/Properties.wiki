@@ -56,7 +56,7 @@ And using it:
 -  Exception: A.x can not be negative!
 }}}
 
-What we have done here is to create methods for getting and setting x.  We preface them with an underscore so as not to pollute the namespace of the class.  We also use the variable name with an underscore inside the getx and setx methods.  Finally, we set the x variable to a property with fget=\_getx and fset=\_setx. 
+What we have done here is to create methods for getting and setting x.  We preface them with an underscore so as not to pollute the namespace of the class.  We also use the variable name with an underscore inside the getx and setx methods.  Finally, we set the x variable to a property with fget=&#95;getx and fset=\_setx. 
 
 The result is that when you access x, the class will internally call self.\_getx.  Also, when you modify x, the class will internally call self.\_setx.  We have accomplished our goal without having to change the api.  
     
