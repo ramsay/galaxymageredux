@@ -8,5 +8,5 @@ Below is information regarding the programming side of GMR. If you interested in
 
 = Links =
 
-  * [svn] guidelines
+  * [SVN] guidelines
   * Getters and Setters in Python = [Properties]
