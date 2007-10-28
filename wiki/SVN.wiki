@@ -21,9 +21,9 @@ If your commit breaks something or has side effects on other code, take the resp
 ==Consult PEP 8==
 Before you commit, please be sure that your code follows the guidelines laid out in [http://www.python.org/dev/peps/pep-0008/ PEP 8].  Making your code as clean and readable as possible goes a long way when 15 other people will need to understand it.
 
-==Use bug tracking system numbers==
+==Use issue tracking id numbers==
 
-If you fix bugs reported on the issue tracking system, add the issue id to the log message. In order to keep the issue tracking system in sync with SVN, you should reference the issue report in your commits, and close the fixed bugs in the issue tracking system.
+If you fix bugs reported on the issue tracking system, add the issue id to the log message. In order to keep the issue tracking system in sync with svn, you should reference the issue report in your commits, and close the fixed bugs in the issue tracking system.
 
 ==Make "atomic" commits==
 
