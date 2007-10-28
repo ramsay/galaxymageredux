@@ -1,0 +1,25 @@
+#summary How to use the pythonic getter/setter pattern.
+
+In some programming languages, being able to access and modify class variables directly can be a problem.  The reason for this is that if you later need to do some form of computation on the variable before accessing or modifying it, you must change the API and that breaks developer code.
+
+The solution to this is to create getter and setters for all public class variables (ie. get_variable_a, set_variable_a).  You must do this from the beginning even if you do nothing more than get or set the variable, just so that possible future changes will not break the API.  In Python, calling a function has significant overhead so the developers have creative a more elegant solution, properties.  Be aware that this only works with new-style classes.
+
+For example:
+
+{{{
+class A(object):
+    def __init__(self):
+        self.x = 1
+}}}
+
+The pythonic way of accessing and modifying the x variable would be:
+
+{{{
+>>> a = A()
+>>> a.x
+-  1
+>>> a.x = 5
+>>> a.x
+-  5
+}}}
+    
