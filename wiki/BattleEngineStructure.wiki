@@ -8,15 +8,15 @@ Once we start coding, I'd like to see if we can use pydoc or some similar tool t
 
 The battle engine is modeled after the event listener design pattern.  Many of the objects in the engine can register themselves as listeners for particular events, and they will be notified when such an event occurs.  Here are some sample events that might be used:
 
-*CLOCKTICK* - A clocktick is the smallest unit of time that occurs in the battle engine.
-*UNIT_TURN_BEGIN*(unit) - This event occurs whenever a unit's turn begins.
-*UNIT_USES_ABILITY*(sourceUnit, targetUnit, ability) - This event occurs when sourceUnit uses an ability on targetUnit.
-*UNIT_DIES* ...
+  * *CLOCKTICK* - A clocktick is the smallest unit of time that occurs in the battle engine.
+  * *UNIT_TURN_BEGIN*(unit) - This event occurs whenever a unit's turn begins.
+  * *UNIT_USES_ABILITY*(sourceUnit, targetUnit, ability) - This event occurs when sourceUnit uses an ability on targetUnit.
+  * *UNIT_DIES* ...
 etc.
 
 There might also be events related to the GUI.
 
-*ABILITY_SELECTED_FROM_MENU*(unit, target, ability) - I see this as being the trigger upon which units carry out actions.  This is different from the UNIT_USES_ABILITY event; there may be commands which, when selected, cause the unit to use one of several abilities (think "Elemental" from FFT) or else abilities that do not need to be selected from the menu (reaction abilities).
+  * *ABILITY_SELECTED_FROM_MENU*(unit, target, ability) - I see this as being the trigger upon which units carry out actions.  This is different from the UNIT_USES_ABILITY event; there may be commands which, when selected, cause the unit to use one of several abilities (think "Elemental" from FFT) or else abilities that do not need to be selected from the menu (reaction abilities).
 
 = Details =
 
