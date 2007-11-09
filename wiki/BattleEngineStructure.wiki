@@ -6,6 +6,17 @@ These are ideas and for the design and representation of the game's battle engin
 
 Once we start coding, I'd like to see if we can use pydoc or some similar tool to generate documentation rather than try to keep this page and the code in sync (which won't happen, no matter how hard we try).
 
+The battle engine is modeled after the event listener design pattern.  Many of the objects in the engine can register themselves as listeners for particular events, and they will be notified when such an event occurs.  Here are some sample events that might be used:
+
+*CLOCKTICK* - A clocktick is the smallest unit of time that occurs in the battle engine.
+*UNIT_TURN_BEGIN*(unit) - This event occurs whenever a unit's turn begins.
+*UNIT_USES_ABILITY*(sourceUnit, targetUnit, ability) - This event occurs when sourceUnit uses an ability on targetUnit.
+*UNIT_DIES* ...
+etc.
+
+There might also be events related to the GUI.
+
+*ABILITY_SELECTED_FROM_MENU*(unit, target, ability) - I see this as being the trigger upon which units carry out actions.  This is different from the UNIT_USES_ABILITY event; there may be commands which, when selected, cause the unit to use one of several abilities (think "Elemental" from FFT) or else abilities that do not need to be selected from the menu (reaction abilities).
 
 = Details =
 
@@ -13,13 +24,11 @@ Once we start coding, I'd like to see if we can use pydoc or some similar tool t
 This class represents an ability that is explicitly "used", but it need not necessarily be manually activated.  The trigger for the ability could be it being selected from the menu, or the trigger might be being attacked, or any number of other things.
 
 === Members ===
-  * *Trigger* _enum_ The trigger for this ability.  Here are a few examples:
-    * SELECTED_FROM_MENU  - This ability was manually selected by the user.
-    * ATTACKED_PHYSICALLY - The character with this ability was physically attacked.
-    * CHARACTER_DIES      - The character uses this ability as his final action when killed.	
+  * *Trigger* _Event_ This is the event upon which this ability is used.
   * *SPCost* _integer_ The number of SP required to use this ability
   * *CTCost* _integer_ The amount by which the user's CT is decremented after using this ability.  This should probably be the same for most abilities, but certain abilities might have a "cooldown" period after their use, while others might allow for action again shortly after being used.
   * *ChargeTime* _integer_ The number of clockticks between when this ability is selected and when it actually "goes off."  This is used for "slow actions," such as spells in FFT.
+  * *NumberOfUses* _integer_ The number of times this ability can be used.  This could represent the amount of ammunition available for a firearm, or it could be used to mark that an ability can only be used a set number of times (i.e. you can only cast SuperUltimateSpellOfDoom once every battle).  There is a special value, UNLIMITED, that specifies that the ability can be used as many times as the character has MP for.  TODO: Do we also want to specify a maximum for this?
   * *HorizontalRange* _integer_ The horizontal range for an ability is the number of panels away from the caster that can be targeted.  Horizontal range of 0 means that the ability is centered on the caster.
   * *VerticalRangeUp* _integer_ The vertical range for an ability is the number of panels above or below the caster that can be targeted.  Vertical range of 0 means that the ability must be targeted at a panel at the same height as the caster.  Measurement is conducted from the center of the caster's panel to the center of the target panel.
   * *VerticalRangeDown* _integer_ The upward vertical range may be different from the downward vertical range.
@@ -70,6 +79,9 @@ Various example flags:
 This class represents something that can happen during a battle. It could be used to represent a basic attack, what happens when an ability is used, what happens when an item is used, or even the effect of a trap or something.  This was one of the messiest and ugliest parts of the original GM code, and I'd like to redesign it from the ground up, but I'm not sure what's the best way to do this.  Any ideas?
 
 == Item ==
+
+UPDATE: Ajhager has suggested that items be implemented as Abilities; equippables would bestow support abilities (for the FFT-savvy, Battle Boots would give the ability "Move + 1"), consumables would be abilities with a single use, etc.  I like this idea, but I think it needs to be discussed a bit more in IRC to iron out the quirks.  If we decide to go with it, the stuff below will be out of date.
+
 This class represents an item. I'd like to do away with the concept of an "inventory" inside of battle, and instead require all items that can be used in battle to be "equipped" to a unit's "belt" in order to be accessible (there can be several slots for items on a unit's belt, so a unit will be able to carry multiple items into battle).  Therefore, I am going to treat all items as "equippable," whether they are things like swords or armor that are traditionally equippable, or things like heal potions or shuriken that are traditionally not.  See class Unit below for more details of how the belt works.
   * *StatModifiers* _array, maps stat->integer_ An array of modifications to each stat due to equipping this piece of equipment. Note that these values can be negative.  For example, heavy armor might give a reduction to Speed.
   * *WeaponPower* _integer_ The power of this item when used as a weapon.  This is seperate from the item's boost to physical attack power.  I'm a big fan of how weapons work in FFT, so I'm going for a system similar to that. For items that cannot (or should not) be used as weapons, this value is 0.  Note that some items might have nonzero values despite them not being able to be equipped to either hand; this could represent the damage dealt by them when thrown, used, invoked, etc.
@@ -103,19 +115,11 @@ Class describing a material from which a MapPanel could be made. Materials will 
 == Status Effect ==
 Class representing a status effect in effect on a unit.  This is a base class that is extended by each specific type of status. For example, there will be a class called Poison that extends this but overrides some relevant methods.
 
-This is the status implementation I was working on when the old GM project died. It seemed to be working pretty well, so I'd like to try it again here.
+Status Effects may register themselves as event listeners for any event upon which they want to have an effect.  For example, Poison might listen for UNIT_TURN_BEGIN and take some HP away from the unit.  Protect might register itself with UNIT_USES_ABILITY and, if the ability is physical and the target has Protect, reduce the power by 50%.
 	
   * *Duration* _integer_ The remaining duration of the status. There is a special value, PERMANENT (= 0) that is used to indicate that the status never expires on its own, although it may still be able to be removed forcefully.	
   * *IsRemovable* _boolean_ Whether or not the status can be removed forcefully (i.e. Dispel, Remedy, etc.)
   * *Power* _integer_ The "power" of the status.  The exact meaning of this depends on the status itself.  For poison, this might determine the percentage of the unit's HP that gets sapped every time it acts. For AtkUp, this might be the percentage increase in the unit's attack power. I'm envisioning that this would be something between 0 and 100, but there's no reason we couldn't go outside those bounds if we decided to allow it.
-  * The effects of statuses are determined by the following methods.  None of these methods have any effect in the base Status class.  However, statuses that extend this can override these statuses to do something interesting here.
-    * *OnAdd*(unit)       called when the status is added
-    * *OnCancel*(unit)    called when the status is removed
-    * *OnClocktick*(unit) called every clocktick
-    * *OnTurnBegin*(unit) called every time the unit's turn begins
-    * *OnTurnEnd*(unit)   called every time the unit's turn ends
-    * *OnUseAbility*(unit, target, ability) called every time the unit uses an ability on "target"
-    * *OnAbilityUsedUpon*(unit, source, ability) called every time the unit is targeted by an ability from "source"
   * *AbilityFilter* _function(ability)_ This function determines what abilities the unit is allowed to use while under the effects of this status.  This function takes an ability and returns true if the ability can be used while this status is in effect and false otherwise. For example, "Silence" might return false for all magic and true for everything else. A status that does not affect abilities would return true for everything.
 
 == Unit ==
