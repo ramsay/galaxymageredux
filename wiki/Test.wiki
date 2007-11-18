@@ -1,0 +1,16 @@
+The editor spits out 2 things. A "abstract map file":
+
+Each tile is just a list [height, entity1, entity2, ... ]
+
+so
+
+Name = Castle
+
+Map = [
+[2, Tree, Sound1],
+[4, Lamp]
+]
+
+Then the geometry file is an actual 3d model file with materials.
+
+So the engine loads up the abstract map file, creates a representation, sends that off to each client.  The client then loads the 3d model and materials based on the name Castle, and the models and sprites based on the names of each entity.
