@@ -1,0 +1,130 @@
+#an idea for handling data files, again :)
+= Introduction =
+
+There has been a lot of talk on file handling and, more specifically map file handling.
+The method presented here is one Markus and I thought up in irc.
+
+The main problems I have seen with the other formats as (and this is just how I am seeing it, correct me if I am wrong - I am probably just reading it wrong again ;) ) and some of them have different strengths or weaknesses I'm not mentioning:
+  * there would be a different format for each type of object - map, unit, affect, attack, etc.
+  * the map formats are extremely biased towards an opengl renderer, while this is fine for now, it will make it virtually impossible to add new clients in the future, and impossible for different clients to play together.
+  * they aren't powerful enough - this is just what I am seeing from the features presented, they may just need to be flushed out more.
+  * they could be confusing to people who want to create content - possibly adding a lot of rather cumbersome features few would need, and may make it a pain for the programmers.
+
+
+= File Interpretor =
+Markus and I agree that it would be nice to have Python for the files, but also that it could represent a major security hole.
+The following idea is meant to be a compromise between both.
+
+First, the entire file will be executed within a function, thus removing the majority of threats, because you can't access beyond the files namespace. This still allows the threat of tampering with globals.
+
+So...
+The idea is that only functions will be used in the files, everything else will be ignored.
+Also, these files must be ones that are specified in the interpretor, and the file has no access to other functions.
+This would remove all security holes - at least those presented by using Python.
+
+The interpretor would then do a few things for each load.
+First, it would define all the functions available to the file for usage.
+Second, it would store a list with names of all allowable functions in a variable named "allowed_functions".
+Third, it would parse the file, removing everything that isn't a function call.
+Fourth, it would check each function call and make sure it is calling a function specified in "allowed_functions" - removing invalid requests.
+Lastly it would execute the file.
+
+
+= File Structure =
+
+From what Markus and I discussed there are basically two ways the structure can take.
+
+The first one is rather cleaner in my opinion.
+
+{{{
+BeginImage()
+image_name("Grass")
+filename("data/tiles/grass1.png") #the "/" will be interpreted as an os.path.join splitter
+gl_material_color(1, 1, 1, 1)
+gl_material_color_variability(0.1, 0.1, 0.2, 0)
+EndImage()
+}}}
+This represents an image being loaded and stored in memory, but the principle applies to any conceivable object we would want to create.
+The gl- stuff would be opengl specific variables that would be used if the render were an opengl one, but ignored by other renderers.
+In this manner we can create content that is specific to each renderer, without making it impossible to add other clients.
+The non-client specific stuff should be as general as possible, and it should be the renderer that deals with the stuff differently.
+Like you would use the exact same code above for both an opengl render and, say, and isometric one, except the isometric would load the image to a surface, the opengl one to a texture.
+
+The second one is more compact, but maybe less readable.
+
+{{{
+Image(name="Grass", filename="data/tiles/grass1.png",
+     gl_material_color=(1, 1, 1, 1),
+     gl_material_color_variability=(0.1, 0.1, 0.2, 0))
+}}}
+
+This one accomplishes the exact same effect, but with fewer calls and code.
+
+Maybe we should include the possibility to use either format, based on your preference?
+Maybe just have a SetMode("verbose")/SetMode("compact") method?
+
+
+= Map Format =
+Finally, we will tackle the map format.
+The basic idea of this format is to keep everything as general and powerful as possible.
+Not this would use the exact same interpretor as any other file, so it is possible to define images, units, etc. in here, along with a map.
+This makes making a campaign possibly a one-file thing, or it could also be multiple-file based.
+
+This example uses the verbose mode of execution mentioned above.
+
+{{{
+StartMap()
+name("test1")
+
+StartTile()
+x(0)
+y(0)
+z(0)
+height(5)
+type("Grass") #this should already be specified with an image and attributes(hitpoints, armor, etc.)
+blockable(False)
+is_cliff(False)
+EndTile()
+
+StartTile()
+x(0)
+y(10)
+z(0)
+height(1)
+type("Bridge") #this should already be specified with an image and attributes(hitpoints, armor, etc.)
+blockable(False)
+is_cliff(False)
+EndTile()
+
+EndMap()
+
+StartMapObject()
+type("Tree") #the map_object type "Tree" should already be defined with an image, hitpoints, armor, etc.
+x(0)
+z(0)
+height(0) #this will place the object on the lowest tile at this location, ie the Grass tile we created. 1 would place it on the dirt tile.
+EndMapObject()
+}}}
+
+In this example we create a map named test1, we add one tile location, (0,0) and add two, stacked tiles to it.
+We then add an object to the map, referencing an already created object type(not shown) and place it at (0,0) on top of our grass tile.
+
+Note: There is no mention to corner heights. Why?
+Because That would be quite limiting.
+You wouldn't be able to destroy terrain the same way.
+You would be stuck with an opengl, or possibly DirectX rendering engine.
+You add more options and confusion to the developers(programmers and designers alike).
+The extra options are not especially useful, unless you want to create some odd shaped peaks, which is still possible, but you would have to have several tile next to each other.
+Normally people will just want cliffs _or_ smooth.
+We could, though, add an optional argument "gl_ragged_peak" which, along with a few other  special functions, would allow you to still create those neat edges, but only gl users would have to worry about it - it should have no affect on game-play itself.
+
+
+= Server =
+Well, there has been some talk on how to implement this with a server, so I thought I'd mention it.
+From what I know, the server is intended to store and perform all game logic.
+So, it does not need to send all the map data to each client, because they would each have there own _independent_ copy then.
+Instead the server should create the logical stuff from all the files used in the scenario, and would send all the resource stuff to the client.
+e.g the server would load the map data and object placement stuff, but send the object type creation and image loading to the client.
+
+= Conclusion =
+I believe that the method(s) listed here (with some more thinking out) provide a powerful, robust, clean, and multiple-client friendly way of handling data files and such.
