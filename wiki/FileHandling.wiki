@@ -129,3 +129,5 @@ e.g the server would load the map data and object placement stuff, but send the 
 
 = Conclusion =
 I believe that the method(s) listed here (with some more thinking out) provide a powerful, robust, clean, and multiple-client friendly way of handling data files and such.
+
+There may be other, better ways of doing this, and the other ideas already posted may be those, I just am unclear on some of them at the moment.
