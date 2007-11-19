@@ -1,4 +1,4 @@
-# an idea for handling data files, again :)
+An idea for handling data files, again :)
 
 = Introduction =
 
