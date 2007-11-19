@@ -1,8 +1,29 @@
-The editor spits out 2 things. A "abstract map file":
+#summary A description of an alternative map format
+
+= Introduction =
+
+We have also been discussing another way to handle maps.  The reason for this was to address a few issues.  The first issue has to do with a robust format that can change with our needs in the future, and the other major issue is separation of duty.  This proposal revolves around the editor's functionality so it will be discusses briefly as needed.
+
+= Details =
+
+We have designed GMRedux using a server/client architecture.  The server holds the state, updates it, and sends updates to client.  Clients set up a GUI for displaying the state and interacting with the server.  If we strive to keep what the server needs separate from what the client needs we will be able to change one without affecting the other.
+
+With that in mind, let us list what sort of things the server-side engine would need to know about:
+
+  * An x by y array of terrain heights and the entities each terrain square contains.
+  * How to load up entities (to be discussed on another page).
+
+And now the client:
+
+  * To be able to load a 3d file of static geometry, textures, sprites, sounds, lights, depending on the names of the map and entities.
+
+= Editor =
+
+In the editor people will be able to create a map x by y.  Then each square they can raise the height z.  They will also be able to modify the corner points of each square so within 1 height unit up or down.  Then you will be able to texture each side of the terrain.  You will also be able to design Entities and place them throughout the map (this will be discussed later but will include faction starting spots, blocking objects, light and sound sources, triggers, etc).
+
+When you go to save the map multiple files will be generated.  An abstract map file for the serverside...
 
 Each tile is just a list [height, entity1, entity2, ... ]
-
-so
 
 Name = Castle
 
@@ -11,6 +32,12 @@ Map = [
 [4, Lamp]
 ]
 
-Then the geometry file is an actual 3d model file with materials.
+And then for clientside...
+
+An actual 3d model file with materials descriptions.  (quake2 model files or obj or something modified for our own uses).
 
 So the engine loads up the abstract map file, creates a representation, sends that off to each client.  The client then loads the 3d model and materials based on the name Castle, and the models and sprites based on the names of each entity.
+
+= Conclusion =
+
+We have now separated the abstract game from its graphical representation.  If we change what is needed in the map file for the serverside it will not affect how the static geometry is saved.  If we change the way graphics are handled we will not be affecting the serverside engine.
