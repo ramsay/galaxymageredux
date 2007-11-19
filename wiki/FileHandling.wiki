@@ -12,7 +12,7 @@ The main problems I have seen with the other formats as (and this is just how I 
   * they could be confusing to people who want to create content - possibly adding a lot of rather cumbersome features few would need, and may make it a pain for the programmers.
 
 
-= File Interpretor =
+= File Interpreter =
 Markus and I agree that it would be nice to have Python for the files, but also that it could represent a major security hole.
 The following idea is meant to be a compromise between both.
 
