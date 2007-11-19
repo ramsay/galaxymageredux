@@ -1,4 +1,5 @@
-#an idea for handling data files, again :)
+# an idea for handling data files, again :)
+
 = Introduction =
 
 There has been a lot of talk on file handling and, more specifically map file handling.
