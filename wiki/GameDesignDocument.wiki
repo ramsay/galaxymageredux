@@ -740,19 +740,24 @@ Every unit has the following:
 
 *Point Cost:* Useful to determine the general strength of the unit; based upon the skills, equipment, and other things that affect point score.
 
+
+
 *Equipment:*
 
-  *Weapon:* Some classes are limited to using only certain type of weapons while others can wield any or none.
+*Weapon:* Some classes are limited to using only certain type of weapons while others can wield any or none.
 
-  *Body Armor:*  Classes are limited to choosing an armor that fits into their category: Heavy, Medium or Light.  Some classes may not wear any armor.
+*Body Armor:*  Classes are limited to choosing an armor that fits into their category: Heavy, Medium or Light.  Some classes may not wear any armor.
 
-  *Shield:* Provides a chance to miss, some units cannot equip shields
+*Shield:* Provides a chance to miss, some units cannot equip shields
 
-  *Helmet:* Helmets provide protection from different types of ailments such as confusion, blindness, etc.
+*Helmet:* Helmets provide protection from different types of ailments such as confusion, blindness, etc.
 
-  *Shoes:*  Shoes provide an enhancement to speed, move, or jump, or a combination thereof
+*Shoes:*  Shoes provide an enhancement to speed, move, or jump, or a combination thereof
 
-  *Accessory:* Provides an additional effect that can be of any type
+*Accessory:* Provides an additional effect that can be of any type
+
+
+
 
 *Attack:* Determined from a unit’s class, equipment, and any abilities that they may be under.  The amount of damage a unit will do.
 
