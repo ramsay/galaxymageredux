@@ -1,0 +1,913 @@
+#summary Game Design Document/Specifications
+#labels Phase-Requirements,Phase-Implementation,Phase-Design
+
+= Introduction =
+GalaxyMage Redux Game Design Document
+
+This is the game design document to help developers stay on the same page as they progress through each phase in development.  This is a generalized catch-all version.  For a more programming-centered design document please read http://code.google.com/p/galaxymageredux/wiki/BattleEngineStructure
+
+
+= Details =
+
+*Basic Overview*
+
+GalaxyMage Redux may be a drastic change from its predecessor, but it follows in the same principle of gameplay.  Redux will become more a multiplayer experience than a single player one --although support for bots will still be available.  Offline, Players will choose a faction which will determine what unit classes will be available to them and using a party building system based on a point they specify, build up and customize their own personal armies.  Everything that a player adds to their party – be it skills, items, units – cost points.  For example, a 300 point party will be for simple 4 man groups, while a 5000 point party will be for massive out all war games.  Online, matches will be made with competitors whose points score are equal  to their own.  During the battle the player will learn what works with his party and what doesn’t.  Afterwards, they can go back to the party editor and adjust.  So, the player will enjoy an evolutionary approach to building and fighting with their army.  The party editor will also feature an option to save armies, so the best can be uploaded at the Redux website and shared among friends or guilds.
+
+ 
+
+*Commanders*
+
+Commanders are special units in that there can only be one per player and that they are more powerful than an average unit.  Every army over a certain size (TBD) will be required to have a commander unit.  Each faction has a choice of two commanders that they can field in battle.
+
+ 
+
+There are four factions to choose from:
+
+ 
+
+*The Watchers:*
+
+A knightly group of soldiers who abhor magic and all of its incarnations.  They are fond of personal strength and we are likely to start a witch-hunt at the mere mention of magic. They are chilvarious in battle and only appreciate hand-to-hand combat. When combined in battle with their High Potentates they gain an even greater strength and the near insanity to please those above them.  Their strengths are high defense and attack, but they are slow and have short range.
+
+ 
+
+*Children of Sarme:*
+
+Citizens who hail from Sarme, an island in which the past’s wars have not touched thus allowing Sarme to become  technologically advanced.  The people of Sarme are very intelligent but are very frail and weak in physical strength so they have advanced themselves by inventing walking armor and long range weapons.  Their strengths are long range and defense, but their weaknesses are low life and speed.
+
+ 
+
+*Wastemen:*
+
+The Wastemen are inhabitants of the Great Desert, who have formed a special relationship with the Tykin-long, or desert cats.  They worship the cats with fervor and bless those in their group who show skills that are akin to the Tykin-long.  These people are known as the Cat Speakers and they are force to reckoned with when they are in their own environment.  Wastemen are fast and have high attack, but they have a low population due the desert lifestyle, so huge bands of Wastemen are never seen due to the resources required to form them.
+
+ 
+
+*The Forlorn:*
+
+These are the people of nightmares.  They are the servants of the 12 great Forlorn, the masters of all magic in the world.  The most powerful of this group, Overseers, are granted abilities from their masters to wield magic in its primal form.  The creations of the Forlorn, known as the Altered Ones, are commanded by the Overseers to wreak havoc upon their enemies.  Without a strong flow of magic, the Forlorn are weak, but when properly guided they can be strong in every area of battle.
+
+ 
+
+ 
+
+*The Troops:*
+
+*The Watchers:*
+
+Symbol: A sun with an eye for the center
+
+General Artistic Style: Similar to Knights from Medieval Times.  Clothing is white and yellow and most wear their armor 2/3rd's of the day.
+
+ 
+
+Commander: *High Potentate:* Inspires other to fight harder and faster
+
+Artistic Description:[add]
+
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+Commander: *Right Arm:* Strong, brute of a soldier, which commands through his actions in the field
+
+Artistic Description:[add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Knight:* Strong, slow moving melee attacker
+
+Artistic Description:[add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Lawbringer:* Faster and weaker version of the Knight with spear skills
+
+Artistic Description:[add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Raven’s Eye:* The Watcher's only long-range unit - uses a chained scythe to cut down foes at a distance.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Farmer:* Scythe-wielding troops that are weak, but inexpensive
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Soul Cleanser:* Healer and Support troops, very fragile
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*The Children of Sarme:*
+
+*Symbol:* Tree that has a crown among the branches
+
+*General Artistic Style:*  Black with silver edging on clothing .  Most Sarme civilizians do not like objects that hide their face, as this hides their genetic heritage and someone wearing a mask is seen as ashamed of themselves.  Also, they are all prideful of themselves, so most are straight-backed and pompous in appearance to outsiders
+
+ 
+
+Commander: *Dynasty* – General riding in a Sarme Soldier, medium range unit that is good on any area of the battle
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+Commander: *Clone* – Clone of the great leader of Sarme, tactical genius
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Soldier:* Metal, steam-powered melee unit, strong but loses HP over time
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Sniper:* Rifle-wielding long range attacker
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Artillery:* Sarme Soldier mounted with long range cannons instead of arms, due its massive weight, it is very slow and easy to damage (low HP)
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Gauntlet:* Troops equipped with an air gauntlet, a powerful melee gauntlet used to knocks enemies backwards upon attack.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Scientist:* Unit that is skilled at healing and strengthening fellow Sarme units
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Wastemen:*
+
+*Symbol:* Cat Claw Imprint with scratches coming from claw
+
+General Artistic Style:  Like Dune's Fremen, or Wheel of Time's Aiel -- Dusty brown colored clothing above tan skin with clothing worn by desert people.
+
+ 
+
+Commander: *Speaker:* Wastemen general that is revered as a religious figure.  Commands his troops to beyond human abilities.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+ 
+
+Commander: *Tykon-long* – Domesticated, intelligent desert cat that is fast and highly useful on the front lines
+
+Artistic Description: [add]
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+ 
+
+*Cat Talker:* Wasteman with cat-like ferocity, agility, and abilities.  Equipped with metal claws
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+ 
+
+*[Need Name]* – smaller, weaker version of the Tykon-long
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+ 
+
+*Stalker* – Fast, stealth unit able to reach back lines quickly and efficiently
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Slinger* – Wasteman equipped with a modified sling that can throw compacted sand
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Dancer* – Tough melee unit with dancing abilities that can both damage enemies and heal allies
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*The Forlorn:*
+
+*Symbol:*  Debating – Possibly a fire ball
+
+General Artistic Style:  Black and red.  They can be compared to the Chaos from Warhammer, but less mutated.  Most can still pass as human except some like the Altered One, or the Living Flame.  In general, they are pale of skin and frail because of the sickness that the magic brings.
+
+ 
+
+Commander: *Overseer:* General who has been given magical powers directly from the 12 Forlorn.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+Commander: *Avatar:* Magic being who was made in the likeness of one of the Forlorn.  His skills focus on weakening enemy troops’ morale and using his magical blade in attacks
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Altered One* – Human that has been corrupted by magic and has become a monster
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Furiost* – weak, insane troops that the Forlorn use as fodder
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Mage Guard* – Heavily armored troop who can weild rudimentary magic in battle to enhance his own abilities
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Theurmatuge* – Magic using healer and support.  His abilites focus more on keeping troops in battle than just helping them live.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+*Living Flame:* Fire that has been given living sentience to follow the Forlorn.  Walks around in a continous state of rage at the pain his own body is causing him.
+
+Artistic Description: [add]
+
+ 
+
+Skills:
+
+1.
+
+2.
+
+3.
+
+4.
+
+5.
+
+6.
+
+ 
+
+ 
+
+ 
+
+*Unit Statistics:*
+
+ 
+
+Every unit has the following:
+
+ 
+
+*Name:* Random or chosen at creation
+
+*Class:*  The unit’s base class.  Determines base stats like HP, SP, Move, Jump,
+
+*Picture:* Based on class
+
+*Faction*
+
+*Hit Points:*  Remaining life of the unit
+
+*Skill Points:*  Points for using skills, the Forlorn’s magic skills are also considered as using skill points
+
+*Move:* Determines how many tiles a unit may move per turn
+
+*Jump:* Determines how high a unit can jump between two tiles
+
+*Speed:*  How fast and often a unit gets to have an action in battle
+
+*Skills:*  Each unit may choose from the list that their unit class has, up to six.
+
+*Point Cost:* Useful to determine the general strength of the unit; based upon the skills, equipment, and other things that affect point score.
+
+*Equipment:*
+
+  *Weapon:* Some classes are limited to using only certain type of weapons while others can wield any or none.
+
+  *Body Armor:*  Classes are limited to choosing an armor that fits into their category: Heavy, Medium or Light.  Some classes may not wear any armor.
+
+  *Shield:* Provides a chance to miss, some units cannot equip shields
+
+  *Helmet:* Helmets provide protection from different types of ailments such as confusion, blindness, etc.
+
+  *Shoes:*  Shoes provide an enhancement to speed, move, or jump, or a combination thereof
+
+  *Accessory:* Provides an additional effect that can be of any type
+
+*Attack:* Determined from a unit’s class, equipment, and any abilities that they may be under.  The amount of damage a unit will do.
+
+*Evade:* Determined from a unit’s class, speed, equipment, and any abilities that they may be under. Percentage chance of dodging an attack.
+
+*Charge Time:* Used only in battle, this represents the time until their next action
+
+[Additional stats here]
+
+ 
+
+*Note:* There is no defense stat.  Instead, units that would be more “defensive” would just have a higher HP and equipment that would provide defense, would instead just add HP. For example, if an attack did 5 damage to high “defense” unit with 200hp and 5 damage to a low “defense” unit with 100hp, the percentage of damage would reflect the “defense” of the unit (high = 2.5% HP lost, low = 5% HP loss).
+
+ 
+
+ 
+
+*Battle*
+
+ 
+
+Battles will take place on a 3-d map with units represented by 2-d sprites.  The sprites will change their appearance based on the angle of the camera (see camera section for more information).  Players take turns attacking each other and fighting towards a goal predefined before the fight starts.  Example goals would be: Destroy All Opponents, Destroy All Opponent Commanders, King of Hill for X Turns, Capture the Flag X Times, or Survive for X Turns.  Not every player on the same map need have the same goal.  For example, one team may have the goal of Destoy All Opponents and the opposite team may have a goal of Survive for X Turns. Additional goals may be added in the future, or possibly to have multiple goals where you need to have just one to win, or all to win.
+
+
+Battle will be turned based on the speed of units participating.  Faster units will receive more turns in the long run than a slow unit would. 
+
+ 
+
+An example speed loop:
+
+A Wastemen Stalker has 10 speed, while a Watcher Knight has 7. For every iteration of the speed loop they would add their speed to their charge time.  So Turn 2, the Stalker would have 20 CT, and the Knight would have 14.  When the CT gets to a predetermined amount (lets say 25 for this example, but most likely will be 100 or even 1000) that unit gets a turn and any additional CT is wrapped around. 
+
+You can see that just a little bit of speed greatly affects the amount of turns a unit can get.  The stalker almost gets 3 turns for the Knight’s 2 just because the Stalker’s speed is 3 higher.
+
+Some skills will also have a Charge Time.  For example, say a Stalker had an ability called Waiting Strike that had a charge time of 20. The unit who is performing the task, a Stalker, has a speed of 10.  During the time that the attack is charging the unit who is performing the attack cannot gain any CT.  Instead, any CT they would have gotten goes into the attack’s CT.  So it would take two iterations of the speed loop in order to perform this attack.  So watch out!  If the Stalker’s target moved during that time the attack would have been wasted.  You have to pay attention to enemy’s CT and speed too.
+
+Basic attacks and some skills will not have a CT and will be performed immediately.
+
+For any attack, the direction the attack is coming from affects the amount of damage and the chance to evade.  A unit that is attacked on the front has a +Speed x 2% chance to avoid and any damage is reduced by 20%.  Any attack from the sides adds +Speed% evade to the attacked unit and a reduction by 10% if it hits.  An attack from the rear negates 95% chance of evasion (or max of 5% evasion by attacked unit) and no chance of damage reduction.
+
+Beneficial skills are not affected by direction.
+
+
+
+*Camera* 
+
+The camera will act like the cameras from FFT or Disgaea.  The player can rotate at 90 degree intervals (4 angles of the field) and tilt 45 degrees upwards.  The one additional feature would allow the player to move the camera to the top of the battlefield, giving a top-down view of the battle, which should be used in difficult terrain like walls and mountains.  Also, you can zoom in and out of the battlefield to get a larger area of view.
+
+ 
+
+*Party Building System*
+
+Something that is drastically different is the party building system.  This is an attempt to make the multiplayer experience even more in-depth by providing a unique customizable army to play with.  Players can play any faction, but can only have units from the same faction in one army.  Players will be able to save and share armies so that it can be possible in the future to create strategies that combine multiple factions during team-based games.
+
+ 
+The Party Building System works off points.  First, the player loads the party editor and selects their faction from those available.  The player should have a good idea of what their target total points should be, for example 400 would be for small games, while 5000 would be for large games.  Then, choosing from the unit list that is available for their faction the player builds their army, adding equipment, skills, enhancements, and others. 
+
+ 
+*Things that affect the point score:*
+
+*Unit Class:* Some classes are more expensive than others
+
+*Commander:* Commanders are more expensive than normal units
+
+    (see commander information)
+
+*Equipment:* Each piece of equipment adds additional points, the cost of the piece of equipment is proportionally to the abilities it provides
+
+*Skills:* Some skills are more expensive than others based on their overall effectiveness
+
+*Stat Increases:* Player can also manually increase certain stats of the unit at a cost comparably to amount of increase.  (Example: 2 increases would be 5 points each, but a 3rd would be 10 points.  This is to discourage "super" units)
+
+*Items:* Any items such as health potions, charge (aka mana) potions, etc that you bring into battle
+
+[add more here]
+
+ 
+
+*Skills Attributes:*
+
+ 
+
+Every skill has the following attributes:
+
+ 
+
+*Damage Max:* Max amount of damage the attack can do under normal circumstances
+
+*Damage Min:* Minimum amount of damage the attack can do under normal circumstances
+
+ Note: For a healing skill, use negative numbers
+
+*Height:* The maximum amount of height difference that the skill can reach
+
+*Min Range:*  Minimum amount of tiles away from user that the attack may hit
+
+*Max Range:* Maximum amount of tiles away from user that the attack may hit
+
+*Area of Effect:* Area around target that the skill will affect.
+
+*Area of Effect Height:* Difference in height that the skill can affect within area of effect
+
+  Note: If a skill has a 2 AoE Height, then it cannot affect a tile with 9 height if the target tile is at 6 height. (9 – 6 > 1) It could affect it if the AoE Height was 3.
+
+*Abilities:* List of beneficial abilities that the skill may add to the affected target. (Examples: Haste, Protect, etc.)
+
+*Ailments:* List of detrimental abilities that the skill may add to the affected target  (Examples: Poison, Slow, etc.)
+
+[more needed]
+
+
+
+*Tile Attributes*
+
+
+A tile is one square on the field.  Every tile has the following attributes:
+
+
+*Height:*  Representing by an integer, between 1 and infinity, within reason.
+
+*Object:* Optional, the name of an object to be placed on the tile, example: tree, rock, etc.
+
+*ObjectBlocks:* Whether or the object on the tile blocks movement
+
+*Light:* Type of light originating from the tile, if any
+
+*Texture (top):* Texture to use on the top
+
+*Texture(left,right,front,back):* Texture to use in each direction (set individually)
+
+*IsWater:* Whether or not the tile is water.  Water tiles cannot be entered [note: maybe possible to set water depths, so that 1 depth water is enterable]
+
+*XLocation:* X-axis location of the tile
+
+*YLocation:* Y-axis location of the tile
+
+[add]
+
+
+*Map Attributes*
+
+
+The map is a collection of tiles arranged in a certain way as described in the map editor or in the file structure of the map.
+
+
+*Height:* Number of tiles tall.
+
+*Width:* Number of tiles wide.
+
+*Team Placement Area:* Each player's placement area for putting down troops.  Placement area are described as a series of points are do not necessarily need to be adjacent.
+
+[add]
+
+
+*Map Editor*
+
+
+The map editor will work like the one from GalaxyMage, but with a few additions.  First, you can open maps directly from the menu instead of worrying about the command line  "-e". New maps can be created by specifying "New" after clicking to open the editor.  New maps will just have a default value for size and tile heights.  All other features from the original editor will be added back in.  [add information about tags, tile corner heights, etc]                 
