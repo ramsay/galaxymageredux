@@ -1,5 +1,5 @@
+#summary An Overview of the GMM format
 #labels Featured
-#An Overview of the GMM format
 
 = Introduction =
 
