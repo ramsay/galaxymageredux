@@ -1,0 +1,19 @@
+#summary An Overview of things you need to know to create art for GalaxyMage Redux
+
+= Introduction =
+
+Here is a list of things you should know.
+
+
+= Details =
+
+Terrain tiles are images. Supported file-types are .png, .bmp, .jpg, .tga, and any other format supported by Pygame.
+
+Characters are 3d models. We use a custom 3d format [GalaxyMageMeshFormat]. An exporter for blender is due out soon. So it is best you use blender to create your models.
+
+Models are animated with a skeletal system.
+
+If you wish to use another modeler, make sure it supports skeletal animation, and can export to a format that supports them.
+Then, either make an exporter for your modeler, or save them as a skeletal-animation-ready format and load them in blender and export as a GMM.
+
+GUI elements are images, same formats as terrain are accepted.
