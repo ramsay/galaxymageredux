@@ -70,7 +70,8 @@ EXAMPLE:
   #this is a comment :D
   #this creates a simple square that is red
   #and another square that is textured
-  #it also creates a bone that is not connected to another bone
+  #it also creates a bone for square, that is not connected to another
+  #and a bone for square2 that is connected to square
   #and provides rotate and move animations
 
   mtl square
