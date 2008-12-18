@@ -1,4 +1,5 @@
 #summary An Overview of the GMM format
+#labels Deprecated
 
 = Introduction =
 
