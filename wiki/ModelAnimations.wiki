@@ -1,4 +1,5 @@
 #summary A summation of my idea for model animations.
+#labels Deprecated
 
 = Introduction =
 
