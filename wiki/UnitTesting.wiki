@@ -1,4 +1,4 @@
-#summary Guideline Unit Testing and introduction to python module unittest and
+#summary Guideline Unit Testing and introduction to python module unittest
 #labels Phase-Implementation
 
 = Introduction =
