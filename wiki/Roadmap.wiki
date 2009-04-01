@@ -1,18 +1,19 @@
-#summary A list of things we would like to get done for each release.
+#summary Roadmap for the game
 
-= Introduction =
+= Version 0.01 breaking ground =
+  * Main menu:
+    * singleplayer (basically multiplayer with hosting, for now makes two hotseat players)
+    * multiplayer:
+      * hotseat - same as singleplayer for now
+      * create - same as singleplayer except allows other clients to join
+      * join:
+        * host/ip - join a game
+    * options - modify config.py options
+    * exit
+  * A simple ai for singleplayer (for now)
+  * Make maps handle team(num, colors, num_units) functions
+  * Make map_tile handle args starting_point and start_point_team, for starting points for units.
+  * Create Fighter, Archer and Mage units.
+  * Get battle code for melee, ranged and magic working
 
-Below we keep a log of things we are trying to do for each release, as well as a list of things for any future release.  Please keep in mind that some things are not always possible and might not make it in.  If something on the list is interesting to you, please feel free to contact a project member.
-
-= Version 0.1 - A Musing =
-
-  * Client/Server base that will be used for each Module (battle, campaign)
-  * Define maps and entities and allow them to be loaded and saved.
-  * Create the code for loading and showing art like 3d, lights, widgets, sounds, etc.
-  * Create some basic textures, models, sounds, sprites, entities, and maps for people to use.
-  * Create releases for Windows, Mac, and Linux.
-
-= Version X =
-  * Create battle mode.
-  * Create campaign mode.
-  * Add more cowbell.
+= Version 0.02 =
