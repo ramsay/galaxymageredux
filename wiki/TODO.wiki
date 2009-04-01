@@ -1,6 +1,6 @@
-#summary TODO list for the game
+#summary Roadmap for the game
 
-= first release =
+= Version 0.01 =
   * Main menu:
     * singleplayer (basically multiplayer with hosting, for now makes two hotseat players)
     * multiplayer:
@@ -16,4 +16,4 @@
   * Create Fighter, Archer and Mage units.
   * Get battle code for melee, ranged and magic working
 
-= later releases =
+= Version 0.02 =
