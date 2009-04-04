@@ -12,4 +12,3 @@ Below is information regarding the programming side of GMR. If you interested in
   * Getters and Setters in Python = [Properties]
   * Layout of the structure of the game's [BattleEngineStructure battle engine]
   * [MapFileFormat Map file format] for battle maps
-  * [GalaxyMageMeshFormat] for art mesh files
