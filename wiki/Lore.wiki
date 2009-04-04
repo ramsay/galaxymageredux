@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Back-story for the default GalaxyMage game world.
 
 = Introduction =
 
