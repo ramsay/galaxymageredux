@@ -1,8 +1,46 @@
 #summary Descriptions of the factions in the default GalaxyMage game world.
 
-= Introduction =
+== Forlorn ==
 
-Add your content here.
+Magic-Lovers. Pretty much self-explanatory.  They use Magic, or we 
+could say "Dark Magic" if we decide to add more factions that use 
+different types of magic  Their attacks will be typical magic-style 
+animations - flame bursts, lightning strikes, etc. but with some 
+creativity, of course.  I don't want to recycle old ideas.
+
+== Children ==
+
+Technology-Users.  Their attack animations would be explosions, 
+grenades, gunpowder weapons, etc.  We could go far ahead in tech and 
+say lasers too, but I wanted them to be closer to something.. 
+steampunk.. somewhere around after the industrial revolution.
+
+== Templars ==
+
+Zealots.  This is the tough one.  How do we make normal 
+humans look awesome when attacking?  I think the best bet is to have 
+it where they go into "berserk" mode during a battle letting them 
+increase their own stats like speed, attack, move etc.  The Commanders 
+could also use these abilities on others, effectively making the 
+Commander into a kind of braveheart style hero.  Also we could 
+abilities that let them hit more than once, do spin attacks, and do 
+more damage when there is more troops around them, etc.  But the 
+Watchers may seem boring to some because they won't have alot of over- 
+the-top style attacks like the other factions.  Maybe we let them have 
+some sort of war machines (catapults,etc).  I dunno, let me know what 
+you think. Maybe the Watcher could be the standard "beginner" faction 
+that is pretty much straight-forward to play (walk up to enemy and 
+attack). 
+ 
+== Wastemen ==
+
+Chakra-Practitioners.  Wastemen have honed their bodies to super-human 
+levels and so are able to do things that normal humans are unable to 
+do.  Battle animations include jumping great distances, over-the-top 
+physical attacks (example: most animations in Disgaea, ninja movies). 
+We could include attacks that let them push enemies across a distance, 
+magic-like abilities (explosions, etc.) and also attacks that have a 
+cat-like look (claw gloves raking back and forth).
 
 
 = Details =
