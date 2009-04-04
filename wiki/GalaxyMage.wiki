@@ -10,6 +10,7 @@ Welcome to the GalaxyMage Redux wiki.  Below you will find links to all the most
 
   * [Basics]
   * [Controls]
+  * [Lore]
   * [Factions]
 
 == Development ==
