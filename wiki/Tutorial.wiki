@@ -1,14 +1,10 @@
 #labels Featured
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
 # Tutorial created for Pyweek August 2010
 
 =A. Starting a GalaxyMageRedux Server=
 
     To quickly get a server running start the script run_server.py in the main
-GalaxyMageRedux folder. It will prompt you for a port number, but you can 
+GalaxyMageRedux/pyweek folder. It will prompt you for a port number, but you can 
 leave it blank to use the default port (54321). It will bind to localhost and 
 attempt to bind your internet address. It will print that IP so that you may
 share it with your frinds.
@@ -18,23 +14,27 @@ a NAT or in your software firewalls.
 
 =B. Playing GalaxyMageRedux=
 
-==# Connecting to a Server==
+==1. Connecting to a Server==
+
 You play Galaxy Mage by starting the run_client.py script. It will ask for your
 Username (can be anything, at least 4 chars long), the server (localhost if you are playing by yourself,
 or the address of a remote server), and the port number of the server you are 
 connecting to. If you connect you'll be taken to the Server Lobby
 
-==# Server Lobby==
+==2. Server Lobby==
+
 Here you can see the users connected to the server, the games on the server,
 and the chat for the server. To begin a game either click on one of the games
 that are joinable or click on Create a new Game.
 
-==# Creating a Game
+==3. Creating a Game
+
 You will be asked for a name for a game and you can choose one of the available
 scenarios. You can find out how to add or create new scenarios below in C. Modding
 GalaxyMageRedux.
 
-==# Game Lobby ==
+==4. Game Lobby ==
+
 Before an actual game starts, you will sit in the game lobby. You can chat to
 other players as you wait for everyone to connect. You can choose a different
 scenario and you can choose which of the available teams you want to be on.
@@ -43,7 +43,7 @@ If you want to play by yourself or if you are tired of waiting for players you
 can click Start Game, which will load the scenario and fill empty team slots by
 computer bots.
 
-==# Game Play ==
+==5. Game Play ==
 
 Once in game you will see the battle field which has tiles, Units, and other 
 entities such as walls. The Units have flags next to them denoting which team
@@ -65,17 +65,17 @@ Galaxy Mage Redux is composed of scenarios, abilites, images, and units.
 There is a main folder for each of these in /data/
 Also, scenario specific abilities, images and units are found in /data/scenarios/<scenario>/
 
-==# Images==
+==1. Images==
 The images folder holds all the sprites and tile images. Sprites may be PNG or
 Animated GIFs. Tiles should be PNG. The images can be any size, just be sure to
 update your scenario with the proper size of the tiles (which should all be the
 same size.
 
-==# Abilities and Units==
+==2. Abilities and Units==
 Abilities and Units are python scripts that create new classes based on
 BaseAbility and BaseUnit (whose classes are in the lib/mod_base.py). 
 
-==# Scenarios==
+==3. Scenarios==
 In the Scenarios folder are more folders which act like game packages. These
 folders hold abilities, images, and units folders just like the main data folder.
 All the files in the main abilites, images, and units folders can be used by
