@@ -1,0 +1,21 @@
+#summary RB[0]'s design notes...
+
+= Introduction =
+
+Here I will write up my thoughts/designs for things, so others can see them, instead of just working from my own list, feel free to comment/modify it, since I can always just check for changes if necessary :)
+
+
+= Network =
+
+Lot's of things need to happen/be made.
+The servers need to be fast, each being able to handle perhaps 50 games without noticeable lag.
+Registration server - so when you create your own you can register it there, in turn the regserv will ensure your server can actually be reached (not just localhost), and if it can, will create an entry with whatever name you want and your parameters.
+
+Parameters for regserv will be server_name, server_version, server_max_users, password (can be empty)
+When you make your server, it will give you the choice of registering or not.
+It will also spit out your online IP address.
+Server's will maintain a connection to regserv except if they are in private mode.
+If they lose connection to regserv *but* maintain server host, they will automatically go into private mode, storing data.
+Operators of server can re-apply to regserv at their leisure.
+
+Server terminal should really allow input to be gathered for controlling it.
