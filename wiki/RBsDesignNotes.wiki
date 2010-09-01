@@ -5,6 +5,10 @@
 Here I will write up my thoughts/designs for things, so others can see them, instead of just working from my own list, feel free to comment/modify it, since I can always just check for changes if necessary :)
 
 
+= GoogleCode cleanup =
+Someone really needs to either update or delete the old wiki pages that aren't accurate anymore.
+
+
 = Network =
 
 Lot's of things need to happen/be made.
