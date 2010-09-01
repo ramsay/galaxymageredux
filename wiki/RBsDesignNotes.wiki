@@ -23,3 +23,9 @@ If they lose connection to regserv *but* maintain server host, they will automat
 Operators of server can re-apply to regserv at their leisure.
 
 Server terminal should really allow input to be gathered for controlling it.
+
+How do we want to handle distribution of mods? ATM in-game there is no protection, you just have to trust the mod to not screw with your system.
+A couple possibilities:
+  * return to file scanning to weed out obvious issues (exec, import)
+  * destroy modules access to global and local variables outside of their scope.
+  * How do we allow the module to then access the game without allowing it to leak out to unauthorized areas?
