@@ -24,8 +24,30 @@ Operators of server can re-apply to regserv at their leisure.
 
 Server terminal should really allow input to be gathered for controlling it.
 
-How do we want to handle distribution of mods? ATM in-game there is no protection, you just have to trust the mod to not screw with your system.
+= Security =
+How do we want to handle distribution of mods?
+ATM in-game there is no protection, you just have to trust the mod to not screw with your system.
 A couple possibilities:
   * return to file scanning to weed out obvious issues (exec, import)
   * destroy modules access to global and local variables outside of their scope.
   * How do we allow the module to then access the game without allowing it to leak out to unauthorized areas?
+
+Current thought on best system - server doesn't need to know what is in mod, it just funnels communications, so it is already secure from any threats from a mod.
+If users don't have correct mod, they can't join a game.
+
+Should we allow players to download mod data from the master? What if the master doesn't like that idea? Won't it slow down gameplay?
+
+Should we have a mod database, where you can search and download from itself, either in-game or from a website?
+How will we handle mod submissions - potentially there will be a lot.
+
+Users can always just distribute mods themselves - probably for the best.
+If we do that then you just trust the source of the mod.
+If someone wants it on the database, we'll just ensure it is not gonna do something stupid...
+
+I still think if there is a way to truly isolate the mod from the game, for safety it would be best. We can then file scan for Python commands we don't like (import, exec) and delete builtins for others (eval, __import__, etc.)
+The issue with that is, how does the mod get information then - or change things?
+For getting info, the engine could simply store everything in the mods main class - which then has a variable (mod) where the actual mod is, so you just grab the parent.
+But how to access network commands then - end turn, unique commands, etc.?
+Perhaps it's simple:
+  * variables in main scenario - turn_over (just turn to True when ending turn), etc.
+  * sendCommand, execCommand, testCommand - stick network discussions into buffer that engine grabs and sends to network, master checks testCommand, and tells execCommand if alright...
