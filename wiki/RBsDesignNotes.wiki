@@ -62,3 +62,16 @@ Need to convert over to OpenGL+3d engine...
 First, need gui rewritten/updated, big issue is fonts, otherwise it is a simple conversion...
 Second is handling map code/picking - just rip off of PYGGEL.
 Third is map file parsing and a map maker...
+
+
+= Map Engine =
+Need to support multiple tile height, bridges/caves/etc...
+Tiles will need to be autonomous structures, cubes with a quad-splintered triangle top.
+Center of top is tile height, edges are average of neighboring tiles and this tiles' heights.
+sides edges match top edges.
+Sides hidden if not shown.
+bottom is same as top.
+
+Do we want "hard edges" or cliffs to be definable, or something set, like 2 tiles higher is sloped, 3+ is cliff?
+
+pathing needs to check tiles internal pointers to neighbors
