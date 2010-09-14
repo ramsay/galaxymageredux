@@ -75,3 +75,6 @@ bottom is same as top.
 Do we want "hard edges" or cliffs to be definable, or something set, like 2 tiles higher is sloped, 3+ is cliff?
 
 pathing needs to check tiles internal pointers to neighbors
+
+One -HUGE- issue with doing multiple layers, and really doing 3d at all, is how do we make units visible, or turn off terrain, or best, center the camera so that it views the player and not all the other junk?
+Do we really have to resort to ODE and ray casting?
