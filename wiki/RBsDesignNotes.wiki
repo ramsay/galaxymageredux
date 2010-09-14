@@ -24,6 +24,10 @@ Operators of server can re-apply to regserv at their leisure.
 
 Server terminal should really allow input to be gathered for controlling it.
 
+Need to change network code to add callbacks for getting responses instead of having server/client send a request as response...
+
+Restructure the server to function with states, where lobby is a state, and games are states.
+
 = Security =
 How do we want to handle distribution of mods?
 ATM in-game there is no protection, you just have to trust the mod to not screw with your system.
