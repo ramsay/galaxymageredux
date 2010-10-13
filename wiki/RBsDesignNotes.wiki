@@ -78,3 +78,5 @@ pathing needs to check tiles internal pointers to neighbors
 
 One -HUGE- issue with doing multiple layers, and really doing 3d at all, is how do we make units visible, or turn off terrain, or best, center the camera so that it views the player and not all the other junk?
 Do we really have to resort to ODE and ray casting?
+
+GUI - remember to place custom game widgets in a game definition - so they don't clog up the gui directory.
