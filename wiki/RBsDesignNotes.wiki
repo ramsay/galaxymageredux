@@ -62,6 +62,8 @@ Need to convert over to OpenGL+3d engine...
 First, need gui rewritten/updated, big issue is fonts, otherwise it is a simple conversion...
 Second is handling map code/picking - just rip off of PYGGEL.
 Third is map file parsing and a map maker...
+Add RenderGroups to 3d engine - instead of builtin render_2d, render_3d, render_always etc.
+Make camera have a *real* pos so there can be a RenderGroupOrdered class for nice 3d blending.
 
 
 = Map Engine =
@@ -80,3 +82,4 @@ One -HUGE- issue with doing multiple layers, and really doing 3d at all, is how 
 Do we really have to resort to ODE and ray casting?
 
 GUI - remember to place custom game widgets in a game definition - so they don't clog up the gui directory.
+Themes - border/collision handling - update theme with new - widgets update_theme method
