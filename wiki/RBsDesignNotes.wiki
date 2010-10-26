@@ -64,6 +64,7 @@ Second is handling map code/picking - just rip off of PYGGEL.
 Third is map file parsing and a map maker...
 Add RenderGroups to 3d engine - instead of builtin render_2d, render_3d, render_always etc.
 Make camera have a *real* pos so there can be a RenderGroupOrdered class for nice 3d blending.
+Add a theme-image creator tool, and convert gui to using theme images (big sprite sheets with font/image data all inside, and controls for creating TextureRegions from that)...
 
 
 = Map Engine =
