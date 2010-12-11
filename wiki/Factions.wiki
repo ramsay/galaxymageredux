@@ -1,8 +1,8 @@
 #summary Descriptions of the factions in the default GalaxyMage game world.
 
-== Forlorn ==
+== The Forlorn ==
 
-Conquesting power-hungry 
+A conquesting power-hungry legion of creatures that were once armored shining seraphim that were twisted through their use and abuse of magic.  Some still display traces of their original angelic nature but are covered in glowing fissured dark armor with black wings (I'm thinking about the angels from The Darkness comic by topcow) others are hunched over with wings of bone or leathery skin.  Still others have had their wings removed and been enslaved, evolving into other creatures altogether through the years.  The Forlorn are primarily magic users but there are still some that have maintained their martial prowess.  Some possible units are scarred battlemages, beast-handlers, winged sword-wielding archons, or the pattern tracing shard-casters.
 
 == Children of Sarame ==
 
