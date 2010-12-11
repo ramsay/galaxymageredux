@@ -41,11 +41,3 @@ physical attacks (example: most animations in Disgaea, ninja movies).
 We could include attacks that let them push enemies across a distance, 
 magic-like abilities (explosions, etc.) and also attacks that have a 
 cat-like look (claw gloves raking back and forth).
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
